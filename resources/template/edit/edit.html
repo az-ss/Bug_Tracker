@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+    <a href="/"><< Back</a>
+    <center>
+        <table>
+        <form action="/update_bug" method="post">
+            <input type="text" name="_id" value="{{ item['_id'] }}" hidden=""><br />
+            <tr>
+                <td>Public_id: </td>
+                <td><input type="text" name="id" value="{{ item['id'] }}" readonly></td>
+            </tr>
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" name="name" value="{{ item['name'] }}"></td>
+            </tr>
+            <tr>
+                <td>Description: </td>
+                <td><input type="text" name="description" value="{{ item['description'] }}"></td>
+            </tr>
+            <tr>
+                <td>Status: </td>
+                <td><input type="text" name="status" value="{{ item['status'] }}"></td>
+            </tr>
+            <tr>
+                <td>Time: </td>
+                <td><input type="text" name="time" value="{{ item['time'] }}"></td>
+            </tr>
+            <tr>
+                <td>Assigned: </td>
+                <td><input type="text" name="assigned" value="{{ item['assigned'] }}"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Submit"></td>
+            </tr>
+        </form>
+        </table>
+    </center>
+    </body>
+</html>
