@@ -19,5 +19,5 @@ setup(
     entry_points={
         'console_scripts':
             ['hd = start_application.py']
-    }
+    }, requires=['pymongo', 'tornado', 'tornadotools']
 )

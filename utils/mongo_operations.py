@@ -1,10 +1,12 @@
 from pymongo import MongoClient
 
 
+client = MongoClient('localhost', 27017)
+db = client.test
+
+
 # Connects to DB.
 def get_bugs_table_instance():
-    client = MongoClient('localhost', 27017)
-    db = client.test
     return db['bugs_collection']
 
 
@@ -28,12 +30,12 @@ def delete_row_by_id(element_id):
 
 # updates DB record.
 def update_element(item):
-      bugs_table = get_bugs_table_instance()
-      bugs_table.update({'id': item['id']}, {'$set': {
-          'id': item['id'],
-          'name': item['name'],
-          'description': item['description'],
-          'status': item['status'],
-          'time': item['time'],
-          'assigned': item['assigned']
-      }})
+    bugs_table = get_bugs_table_instance()
+    bugs_table.update({'id': item['id']}, {'$set': {
+        'id': item['id'],
+        'name': item['name'],
+        'description': item['description'],
+        'status': item['status'],
+        'time': item['time'],
+        'assigned': item['assigned']
+    }})
